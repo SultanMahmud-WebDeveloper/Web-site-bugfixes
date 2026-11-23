@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Causes of Critical Errors &amp; Site Bugs | Sultan Mahmud</title>
+  <meta name="description" content="Why WordPress sites break: PHP fatal errors, memory limits, CSS layout bugs, plugin and theme conflicts and WooCommerce problems, with symptoms and quick fixes.">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="common-causes.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR (same on every page) ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- <a href="index.html" class="logo" aria-label="Sultan Mahmud - home"> -->
+        <img src="images/logo.png" alt="Logo"> 
+        <!-- <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#22d3ee"/><path d="M14 12l-6 6 6 6M22 12l6 6-6 6" stroke="#04222a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
+        <!-- <span>Sultan Mahmud<small>Bug Fix &amp; Problem Solving</small></span>
+      </a> -->
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="common-causes.html">Common Causes</a>
+        <a href="before-after.html">Before &amp; After</a>
+        <a href="packages.html">Packages</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section style="background-image: url(images/banar.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;" class="page-hero">
+      <div  class="container">
+
+        <span class="eyebrow">Diagnosis guide</span>
+        <!-- <img src="images/slide-1.jpg"> -->
+        <h1>Common causes of critical errors &amp; site bugs</h1>
+        <p>Most broken sites come down to a handful of causes. Pick a category to see the cause, the symptoms you will notice and the quick fix.</p>
+      </div>
+    </section>
+
+    <section class="section">
+         <h1 style="text-align: center;">Common Causes & Fixes</h1>
+
+
+      <div class="container">
+
+
+        <!-- FILTER BUTTONS. data-filter must match a card's data-cat value below. -->
+        <div class="filters" id="filters" role="group" aria-label="Filter causes by category">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="php">PHP &amp; Fatal</button>
+          <button class="filter" data-filter="css">CSS &amp; Layout</button>
+          <button class="filter" data-filter="plugins">Plugins &amp; Theme</button>
+          <button class="filter" data-filter="woo">WooCommerce</button>
+        </div>
+        <p class="count" id="count" role="status"></p>
+
+        <!-- CAUSE CARDS
+             HOW TO EDIT:
+             - data-cat = the category (php, css, plugins or woo)
+             - Image: change the file name in <img src="images/cause-1.jpg"> (best size 800 x 500 px).
+               The same text is used in data-label so the empty box tells you which file to add.
+             - To add a card: copy one whole <article class="card cause"> block and edit it. -->
+        <div class="cause-grid" id="grid">
+
+          <article class="card cause" data-cat="php">
+            <div class="img-slot" data-label="images/cause-1.jpg"><img src="images/cause-1.jpg" alt="Faulty functions.php edit causing a white screen"></div>
+            <span class="badge">PHP &amp; Fatal</span>
+            <h3>Faulty <code>functions.php</code> edit</h3>
+            <p class="cause-text"><b>Cause:</b> A missing semicolon or bracket, or a call to a function that does not exist.</p>
+            <ul class="symptoms">
+              <li>White Screen of Death</li>
+              <li>"There has been a critical error"</li>
+              <li>Locked out of wp-admin</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Read <code>debug.log</code>, fix the exact line, then re-test.</p>
+          </article>
+
+          <article class="card cause" data-cat="php">
+            <div class="img-slot" data-label="images/cause-2.jpg"><img src="images/cause-2.jpg" alt="PHP version mismatch error"></div>
+            <span class="badge">PHP &amp; Fatal</span>
+            <h3>PHP version mismatch</h3>
+            <p class="cause-text"><b>Cause:</b> Hosting upgraded PHP, but an old theme or plugin still uses removed code.</p>
+            <ul class="symptoms">
+              <li>Fatal error after a host update</li>
+              <li>Warnings and notices on every page</li>
+              <li>Deprecated function messages</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Update the code to be PHP-compatible, or roll the PHP version back temporarily.</p>
+          </article>
+
+          <article class="card cause" data-cat="php">
+            <div class="img-slot" data-label="images/cause-3.jpg"><img src="images/cause-3.jpg" alt="Allowed memory size exhausted error"></div>
+            <span class="badge">PHP &amp; Fatal</span>
+            <h3>Memory limit exhausted</h3>
+            <p class="cause-text"><b>Cause:</b> A heavy plugin, import or loop uses more memory than the server allows.</p>
+            <ul class="symptoms">
+              <li>"Allowed memory size exhausted"</li>
+              <li>Page builder fails to load</li>
+              <li>Imports or backups stop halfway</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Raise <code>WP_MEMORY_LIMIT</code> and find the plugin that is eating memory.</p>
+          </article>
+
+          <article class="card cause" data-cat="php">
+            <div class="img-slot" data-label="images/cause-4.jpg"><img src="images/cause-4.jpg" alt="500 internal server error"></div>
+            <span class="badge">PHP &amp; Fatal</span>
+            <h3>Server &amp; .htaccess problems</h3>
+            <p class="cause-text"><b>Cause:</b> A corrupted <code>.htaccess</code> file, wrong file permissions or a server timeout.</p>
+            <ul class="symptoms">
+              <li>500 Internal Server Error</li>
+              <li>Every page except the home page gives 404</li>
+              <li>Random timeouts</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Regenerate <code>.htaccess</code>, reset permissions and check server error logs.</p>
+          </article>
+
+          <article class="card cause" data-cat="css">
+            <div class="img-slot" data-label="images/cause-5.jpg"><img src="images/cause-5.jpg" alt="Mobile horizontal overflow"></div>
+            <span class="badge">CSS &amp; Layout</span>
+            <h3>Mobile horizontal overflow</h3>
+            <p class="cause-text"><b>Cause:</b> An element with a fixed width or negative margin is wider than the phone screen.</p>
+            <ul class="symptoms">
+              <li>Page scrolls sideways on mobile</li>
+              <li>Content cut off on the right</li>
+              <li>Zoomed-out look on phones</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Find the wide element and give it <code>max-width: 100%</code> with proper wrapping.</p>
+          </article>
+
+          <article class="card cause" data-cat="css">
+            <div class="img-slot" data-label="images/cause-6.jpg"><img src="images/cause-6.jpg" alt="Overlapping header and sections"></div>
+            <span class="badge">CSS &amp; Layout</span>
+            <h3>Overlapping header &amp; sections</h3>
+            <p class="cause-text"><b>Cause:</b> Conflicting <code>z-index</code>, fixed heights or broken flex/grid rules.</p>
+            <ul class="symptoms">
+              <li>Menu covers the hero section</li>
+              <li>Text sits on top of images</li>
+              <li>Columns stack in the wrong order</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Replace fixed heights with flex/grid and set a clear stacking order.</p>
+          </article>
+
+          <article class="card cause" data-cat="plugins">
+            <div class="img-slot" data-label="images/cause-7.jpg"><img src="images/cause-7.jpg" alt="Plugin conflict after update"></div>
+            <span class="badge">Plugins &amp; Theme</span>
+            <h3>Plugin update conflict</h3>
+            <p class="cause-text"><b>Cause:</b> Two plugins load clashing code, or one needs a newer version of another.</p>
+            <ul class="symptoms">
+              <li>Site breaks right after an update</li>
+              <li>Features stop working in wp-admin</li>
+              <li>JavaScript errors in the console</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Deactivate plugins one by one to find the clash, then patch or replace it.</p>
+          </article>
+
+          <article class="card cause" data-cat="plugins">
+            <div class="img-slot" data-label="images/cause-8.jpg"><img src="images/cause-8.jpg" alt="Theme update breaking templates"></div>
+            <span class="badge">Plugins &amp; Theme</span>
+            <h3>Theme update breaks templates</h3>
+            <p class="cause-text"><b>Cause:</b> Edits made directly in the parent theme are overwritten, or templates are outdated.</p>
+            <ul class="symptoms">
+              <li>Custom changes disappear</li>
+              <li>Layout looks different after update</li>
+              <li>Missing template or widget areas</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Move changes into a child theme and update the old templates.</p>
+          </article>
+
+          <article class="card cause" data-cat="woo">
+            <div class="img-slot" data-label="images/cause-9.jpg"><img src="images/cause-9.jpg" alt="WooCommerce checkout not working"></div>
+            <span class="badge">WooCommerce</span>
+            <h3>Cart &amp; checkout bugs</h3>
+            <p class="cause-text"><b>Cause:</b> A script conflict, a bad custom fee snippet or a payment plugin error.</p>
+            <ul class="symptoms">
+              <li>Place Order button does nothing</li>
+              <li>Cart total or shipping is wrong</li>
+              <li>Customers cannot pay</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Trace the failing hook or script, fix it, then run a full test order.</p>
+          </article>
+
+          <article class="card cause" data-cat="woo">
+            <div class="img-slot" data-label="images/cause-10.jpg"><img src="images/cause-10.jpg" alt="Contact form not submitting"></div>
+            <span class="badge">WooCommerce</span>
+            <h3>Forms &amp; AJAX failures</h3>
+            <p class="cause-text"><b>Cause:</b> A JavaScript error, blocked AJAX request or email settings problem.</p>
+            <ul class="symptoms">
+              <li>Form spins forever or shows an error</li>
+              <li>No email notifications arrive</li>
+              <li>Console shows red errors</li>
+            </ul>
+            <p class="quick"><b>Quick fix:</b> Fix the script error, check AJAX responses and set up reliable SMTP.</p>
+          </article>
+
+        </div>
+
+        <div class="empty" id="empty" hidden>No causes in this category yet.</div>
+
+        <div class="help-box reveal">
+          <div>
+            <h2>Recognise your problem?</h2>
+            <p>Send me the error message and I will tell you the exact cause and the safest fix.</p>
+          </div>
+          <a href="contact.html" class="btn btn-primary btn-lg">Report My Bug</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="foot-name"> <img src="images/logo.png" alt="Logo"> </strong>
+        <p>Web Designer &amp; Web Developer. WordPress, PHP, CSS and custom code bug fixing.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Email</a>
+        <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        
+      </div>
+      <div><button class="btn btn-primary btn-lg"><a style="font-size: 26px;" href="https://short-url.cc/1BeY3
+        " target="_blank" rel="noopener">👉🏽 Hire Me Via Fiverr</a></button></div>
+    </div>
+    <div class="container footer-bottom">&copy; <span id="year">2026</span> Sultan Mahmud. All rights reserved.</div>
+  </footer>
+
+  <script src="base.js"></script>
+  <script src="before-after.js"></script>
+</body>
+</html>

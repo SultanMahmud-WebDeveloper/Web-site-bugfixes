@@ -1,0 +1,55 @@
+/* =========================================================
+   common-causes.css  —  styles for common-causes.html only
+   ========================================================= */
+
+/* Filter buttons */
+.filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.filter { font: inherit; font-weight: 600; font-size: .93rem; cursor: pointer; padding: 10px 20px; border-radius: 999px;
+  background: transparent; color: var(--text); border: 1.5px solid var(--line); transition: all .2s; }
+.filter:hover { border-color: var(--brand); color: var(--white); }
+.filter.active { background: var(--brand); color: #04222a; border-color: var(--brand); box-shadow: 0 0 22px -6px var(--brand); }
+.count { text-align: center; color: var(--mute); font-size: .9rem; margin: 0 0 30px; min-height: 1.4em; }
+
+/* Card grid */
+.cause-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; }
+.cause { display: flex; flex-direction: column; padding: 20px; }
+.cause .img-slot { margin-bottom: 18px; }
+.cause h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.cause p { font-size: .94rem; margin-bottom: 12px; }
+.cause code, .quick code { font-family: var(--mono); font-size: .86em; background: rgba(255,255,255,.08); padding: 2px 6px; border-radius: 6px; color: var(--white); }
+
+/* Category badge (coral = issue) */
+.badge { align-self: flex-start; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em;
+  padding: 4px 11px; border-radius: 999px; margin-bottom: 12px;
+  color: var(--bad); background: var(--bad-soft); border: 1px solid rgba(255,90,110,.4); }
+.cause-text b { color: var(--bad); }
+
+/* Symptoms list */
+.symptoms { display: grid; gap: 7px; margin: 0 0 16px; flex: 1; }
+.symptoms li { position: relative; padding-left: 24px; font-size: .92rem; color: var(--text); }
+.symptoms li::before { content: "!"; position: absolute; left: 0; top: 2px; width: 16px; height: 16px; display: grid; place-items: center;
+  border-radius: 50%; background: var(--bad-soft); color: var(--bad); font-size: .7rem; font-weight: 800; }
+
+/* Quick fix note (green = solution) */
+.quick { margin: 0; padding: 12px 14px; border-radius: 10px; font-size: .9rem; color: var(--text);
+  background: var(--good-soft); border: 1px solid rgba(16,185,129,.35); }
+.quick b { color: var(--good); }
+
+/* Filter animation */
+.cause.hide { display: none; }
+.cause.show { animation: pop .45s ease both; }
+@keyframes pop { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.empty { text-align: center; padding: 40px; color: var(--mute); }
+
+/* Bottom help box */
+.help-box { margin-top: 56px; display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap;
+  padding: 32px clamp(22px, 4vw, 42px); border-radius: 20px; border: 1px solid rgba(34,211,238,.4);
+  background: linear-gradient(120deg, rgba(34,211,238,.14), rgba(16,185,129,.08)); }
+.help-box h2 { font-size: clamp(1.3rem, 2.8vw, 1.8rem); margin-bottom: 6px; }
+.help-box p { margin: 0; }
+
+@media (max-width: 560px) {
+  .cause-grid { grid-template-columns: 1fr; }
+  .filter { padding: 9px 16px; font-size: .88rem; }
+}

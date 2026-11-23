@@ -1,0 +1,31 @@
+/* =========================================================
+   packages.css  —  styles for packages.html only
+   ========================================================= */
+
+.pack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; padding-top: 14px; }
+.pack { display: flex; flex-direction: column; position: relative; padding: 32px 28px; }
+.pack h2 { font-size: 1.35rem; margin-bottom: 6px; }
+.for { color: var(--mute); font-size: .94rem; margin-bottom: 18px; }
+.price-row { padding: 14px 0; margin-bottom: 18px; border-block: 1px dashed var(--line-strong); }
+.price { font-size: 1.5rem; font-weight: 800; color: var(--white); }
+
+/* "What is included" list */
+.inc { display: grid; gap: 11px; margin-bottom: 26px; flex: 1; }
+.inc li { position: relative; padding-left: 28px; font-size: .95rem; }
+.inc li::before { content: "\2713"; position: absolute; left: 0; top: 0; width: 20px; height: 20px; display: grid; place-items: center;
+  border-radius: 50%; background: var(--good-soft); color: var(--good); font-size: .75rem; font-weight: 800; }
+
+/* Highlighted middle card */
+.pack.featured { border: 1.5px solid var(--brand); background: linear-gradient(180deg, rgba(34,211,238,.09), var(--card) 40%);
+  box-shadow: var(--shadow), 0 0 0 4px rgba(34,211,238,.08), 0 24px 60px -26px rgba(34,211,238,.55); transform: translateY(-10px); }
+.pack.featured:hover { transform: translateY(-14px); }
+.popular { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--brand); color: #04222a;
+  font-size: .72rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px; white-space: nowrap; }
+
+.note { text-align: center; color: var(--mute); font-size: .92rem; margin: 40px auto 0; max-width: 640px; }
+
+@media (max-width: 960px) {
+  .pack-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .pack.featured { transform: none; }
+  .pack.featured:hover { transform: translateY(-3px); }
+}

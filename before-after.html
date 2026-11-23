@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before &amp; After Case Studies | Sultan Mahmud</title>
+  <meta name="description" content="See how critical errors, broken mobile layouts and checkout bugs look before and after a fix.">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="before-after.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR (same on every page) ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- <a href="index.html" class="logo" aria-label="Sultan Mahmud - home"> -->
+        <img src="images/logo.png" alt="Logo"> 
+        <!-- <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#22d3ee"/><path d="M14 12l-6 6 6 6M22 12l6 6-6 6" stroke="#04222a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
+        <!-- <span>Sultan Mahmud<small>Bug Fix &amp; Problem Solving</small></span>
+      </a> -->
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="common-causes.html">Common Causes</a>
+        <a href="before-after.html">Before &amp; After</a>
+        <a href="packages.html">Packages</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section style="background-image: url(images/after.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;" class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Case studies</span>
+        <h1>Before &amp; After</h1>
+        <p>Choose a case study, then use the floating <b>Before / After</b> button to switch between the broken state and the fixed result.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- CASE SELECTOR BUTTONS (data-case = index of the case, starting at 0) -->
+        <div class="case-tabs" id="caseTabs" role="tablist" aria-label="Choose a case study">
+          <button class="case-tab active" role="tab" data-case="0"><span class="num">01</span> Critical Error Fix</button>
+          <button class="case-tab" role="tab" data-case="1"><span class="num">02</span> Mobile Layout Fix</button>
+          <button class="case-tab" role="tab" data-case="2"><span class="num">03</span> Checkout / Form Bug Fix</button>
+        </div>
+
+        <!-- STAGE: before-after.js sets data-mode to "before" or "after".
+             Each <article class="case"> holds one case with a BEFORE and an AFTER block.
+             HOW TO EDIT:
+             - IMAGE: change the file name in each <img src="images/...">.
+               Best size 1200 x 750 px. If the file is missing, a labelled box is shown.
+             - TEXT: edit the heading, paragraph and list items.
+             - Add a case: copy a whole <article class="case"> and a matching tab button above. -->
+        <div class="stage" id="stage" data-mode="before">
+
+          <!-- ============ CASE 1: Critical Error ============ -->
+          <article class="case active" data-case="0">
+            <div class="state before">
+              <div class="state-media">
+                <div class="img-slot" data-label="images/case-1-before.jpg"><img src="images/case-1-before.jpg" alt="WordPress critical error screen"></div>
+              </div>
+              <div class="state-info">
+                <span class="status">&#10005; Before &middot; Critical Error</span>
+                <h2>White screen after a <code>functions.php</code> and plugin update</h2>
+                <p>The whole site showed "There has been a critical error on this website" and wp-admin was locked out. Customers could not browse or order.</p>
+                <ul>
+                  <li>PHP Parse error on line 148 of functions.php</li>
+                  <li>Call to an undefined function</li>
+                  <li>Site and dashboard both unreachable</li>
+                </ul>
+              </div>
+            </div>
+            <div class="state after">
+              <div class="state-media">
+                <div class="img-slot" data-label="images/case-1-after.jpg"><img src="images/case-1-after.jpg" alt="WordPress site restored and working"></div>
+              </div>
+              <div class="state-info">
+                <span class="status">&#10003; After &middot; Fixed &amp; Live</span>
+                <h2>Site restored cleanly with zero errors</h2>
+                <p>I took a backup, read the debug log, repaired the unclosed bracket and wrapped the missing function in a safety check. Then I tested the whole site.</p>
+                <ul>
+                  <li>Root cause fixed in a child theme</li>
+                  <li>wp-admin access restored</li>
+                  <li>debug.log clean, no data lost</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ CASE 2: Mobile Layout ============ -->
+          <article class="case" data-case="1">
+            <div class="state before">
+              <div class="state-media">
+                <div class="img-slot" data-label="images/case-2-before.jpg"><img src="images/case-2-before.jpg" alt="Broken mobile layout with overlapping header"></div>
+              </div>
+              <div class="state-info">
+                <span class="status">&#10005; Before &middot; Broken Layout</span>
+                <h2>Overlapping header and sideways scrolling on mobile</h2>
+                <p>After a page builder update the header covered the hero section and cards spilled past the screen edge, so phone visitors had to scroll sideways.</p>
+                <ul>
+                  <li>Header overlapping the first section</li>
+                  <li>Horizontal overflow on phones</li>
+                  <li>Misaligned grid at tablet size</li>
+                </ul>
+              </div>
+            </div>
+            <div class="state after">
+              <div class="state-media">
+                <div class="img-slot" data-label="images/case-2-after.jpg"><img src="images/case-2-after.jpg" alt="Clean responsive layout after the fix"></div>
+              </div>
+              <div class="state-info">
+                <span class="status">&#10003; After &middot; Fixed &amp; Responsive</span>
+                <h2>Clean layout on every screen size</h2>
+                <p>I traced the clashing selectors and replaced fragile overrides with small, scoped CSS using flex and grid, then checked every breakpoint and browser.</p>
+                <ul>
+                  <li>No horizontal overflow at 320 / 375 / 768 / 1280 px</li>
+                  <li>Checked in Chrome, Safari, Firefox and Edge</li>
+                  <li>Spacing and alignment restored</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ CASE 3: Checkout / Form ============ -->
+          <article class="case" data-case="2">
+            <div class="state before">
+              <div class="state-media">
+                <div class="img-slot" data-label="images/case-3-before.jpg">
+  <img src="images/case-3-before.jpg" alt="Checkout button not working with console errors">
+</div>
+              </div>
+              <div class="state-info">
+                <span class="status">&#10005; Before &middot; Checkout Failing</span>
+                <h2>Place Order button did nothing</h2>
+                <p>A custom fee snippet read an array key that did not exist and a script conflict broke AJAX on checkout, so customers could not complete a purchase.</p>
+                <ul>
+                  <li>JavaScript TypeError in the browser console</li>
+                  <li>PHP warning: undefined array key</li>
+                  <li>Customers abandoning their carts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="state after">
+              <div class="state-media">
+                <div class="img-slot" data-label="images/case-3-after.jpg"><img src="images/case-3-after.jpg" alt="Successful order confirmation"></div>
+              </div>
+              <div class="state-info">
+                <span class="status">&#10003; After &middot; Clean &amp; Working</span>
+                <h2>Orders and forms working with zero warnings</h2>
+                <p>I rewrote the snippet with proper checks and hooks, fixed the script conflict and ran full test orders and form submissions.</p>
+                <ul>
+                  <li>Validated, escaped custom PHP code</li>
+                  <li>Test orders completed successfully</li>
+                  <li>debug.log shows 0 warnings</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /stage -->
+
+        <div class="help-box reveal">
+          <div>
+            <h2>Have a problem like this?</h2>
+            <p>Send me your error or a screenshot and I will tell you how I would fix it.</p>
+          </div>
+          <a href="contact.html" class="btn btn-primary btn-lg">Report My Bug</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING BEFORE / AFTER TOGGLE (stays visible while you scroll) -->
+  <div class="float-toggle" id="floatToggle" role="group" aria-label="Show before or after">
+    <button class="ft-btn ft-before active" data-mode="before" aria-pressed="true">&#10005; Before</button>
+    <button class="ft-btn ft-after" data-mode="after" aria-pressed="false">&#10003; After</button>
+  </div>
+
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="foot-name"> <img src="images/logo.png" alt="Logo"> </strong>
+        <p>Web Designer &amp; Web Developer. WordPress, PHP, CSS and custom code bug fixing.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Email</a>
+        <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        
+      </div>
+      <div><button class="btn btn-primary btn-lg"><a style="font-size: 26px;" href="https://short-url.cc/1BeY3
+        " target="_blank" rel="noopener">👉🏽 Hire Me Via Fiverr</a></button></div>
+    </div>
+    <div class="container footer-bottom">&copy; <span id="year">2026</span> Sultan Mahmud. All rights reserved.</div>
+  </footer>
+
+  <script src="base.js"></script>
+  <script src="before-after.js"></script>
+</body>
+</html>

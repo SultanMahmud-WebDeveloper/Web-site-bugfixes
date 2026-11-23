@@ -1,0 +1,156 @@
+/* =========================================================
+   base.css  —  SHARED by every page
+   Colors, reset, buttons, navbar, footer, image slots.
+   To change the whole theme, edit the :root variables below.
+   ========================================================= */
+
+:root {
+  /* Backgrounds */
+  --bg: #144E76;          /* page background */
+  --card: #0d1720;        /* card background */
+  --card-2: #122231;      /* slightly lighter card / hover */
+
+  /* Text */
+  --white: #ffffff;
+  --text: #cbd5e1;
+  --mute: #8696ab;
+
+  /* Accents */
+  --bad: #ff5a6e;         /* Bug / Issue / Before */
+  --bad-soft: rgba(255, 90, 110, 0.12);
+  --good: #10b981;        /* Solution / After / Fixed */
+  --good-soft: rgba(16, 185, 129, 0.12);
+  --brand: #22d3ee;       /* Main brand / buttons / highlights */
+  --brand-2: #38bdf8;
+  --brand-soft: rgba(34, 211, 238, 0.12);
+
+  /* Depth */
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.28);
+  --shadow: 0 18px 44px -18px rgba(0, 0, 0, 0.75);
+  --radius: 16px;
+  --nav-h: 72px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 10px); }
+body {
+  margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+  line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, h4 { color: var(--white); line-height: 1.2; margin: 0 0 .6em; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: min(1160px, 92%); margin-inline: auto;
+
+ }
+.section { padding: 80px 0;
+  /*width: 1280px; height: 100px;*/
+ }
+.section-alt { background: var(--card); border-block: 1px solid var(--line); }
+
+/* ---------- Page title banner (used on inner pages) ---------- */
+.page-hero { padding: 64px 0 40px; text-align: center; border-bottom: 1px solid var(--line);
+  background: radial-gradient(ellipse at 50% 0%, rgba(34,211,238,.14), transparent 65%); }
+.page-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; }
+.page-hero p { max-width: 640px; margin: 0 auto; color: var(--text); font-size: 1.05rem; }
+.eyebrow { display: inline-block; color: var(--brand); font-weight: 700; font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .14em; margin-bottom: 12px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;
+  font: inherit; font-weight: 700; padding: 12px 22px; border-radius: 12px;
+  border: 1.5px solid transparent; transition: transform .2s, box-shadow .25s, background .2s, border-color .2s, color .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--brand); color: #04222a; }
+.btn-primary:hover { box-shadow: 0 0 0 4px rgba(34,211,238,.22), 0 10px 28px -8px rgba(34,211,238,.6); }
+.btn-ghost { background: transparent; color: var(--white); border-color: var(--line-strong); }
+.btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+.btn-sm { padding: 9px 16px; font-size: .9rem; border-radius: 10px; }
+.btn-lg { padding: 15px 28px; font-size: 1.05rem; }
+.btn-block { width: 100%; }
+
+/* ---------- Cards ---------- */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px;
+  box-shadow: var(--shadow); transition: border-color .25s, transform .25s; }
+.card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+
+/* ---------- IMAGE SLOT ----------
+   Use anywhere you want to drop an image:
+   <div class="img-slot" data-label="images/my-photo.jpg">
+     <img src="images/my-photo.jpg" alt="Describe the image">
+   </div>
+   If the file is missing, the box keeps its size and shows the
+   data-label text, so layouts never look broken. */
+.img-slot {
+  position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 16 / 10;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #0f2233, #0a141d); border: 1px dashed rgba(34,211,238,.35);
+}
+.img-slot::before { content: "Add image: " attr(data-label); color: var(--brand); font: 500 .74rem var(--mono);
+  text-align: center; padding: 10px; }
+.img-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- NAVBAR (identical on every page) ---------- */
+.navbar { position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+  background:#062940; backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 10px; color: var(--white); font-weight: 800; font-size: 1.1rem; }
+.logo svg, .logo img { width: 36px; height: 36px; }          /* logo icon OR <img> size */
+.logo small { display: block; font-size: .68rem; font-weight: 500; color: var(--mute); letter-spacing: .02em; }
+.nav-links { display: flex; align-items: center; gap: 26px; font-weight: 500; font-size: .95rem; }
+.nav-links a:not(.btn) { color: var(--text); position: relative; padding: 4px 0; transition: color .2s; }
+.nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px;
+  background: var(--brand); transition: width .25s; }
+.nav-links a:not(.btn):hover, .nav-links a.active { color: #22D3EE; }
+.nav-links a:not(.btn):hover::after, .nav-links a.active::after { width: 100%; }
+
+.nav-toggle { display: none; width: 44px; height: 44px; background: none; cursor: pointer;
+  border: 1.5px solid var(--line-strong); border-radius: 12px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--white); transition: transform .25s, opacity .25s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- FOOTER ---------- */
+.footer { border-top: 1px solid var(--line); background: #062940; padding: 40px 0 22px; }
+.footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.footer p { color: var(--mute); font-size: .9rem; max-width: 42ch; margin: 8px 0 0; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 600; font-size: .92rem; }
+.footer-links a:hover { color: var(--brand); }
+.footer-bottom { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--mute); font-size: .84rem; }
+
+/* ---------- Scroll reveal (added by base.js) ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
+    background: #070d12; border-bottom: 1px solid var(--line); padding: 8px 4% 20px;
+    max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; padding-block: 0;
+    transition: max-height .4s ease, opacity .3s ease, padding .3s ease;
+  }
+  .nav-links.open { max-height: 460px; opacity: 1; pointer-events: auto; padding-block: 8px 20px; }
+  .nav-links a:not(.btn) { padding: 15px 4px; border-bottom: 1px solid var(--line); }
+  .nav-links a:not(.btn)::after { display: none; }
+  .nav-links a.active { color: var(--brand); }
+  .nav-links .btn { margin-top: 14px; }
+  .section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}

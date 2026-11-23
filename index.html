@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sultan Mahmud | WordPress, PHP &amp; CSS Bug Fix</title>
+  <meta name="description" content="Fast, safe fixes for WordPress critical errors, PHP fatal errors, broken CSS layouts and custom code problems.">
+  <link rel="stylesheet" href="base.css">   <!-- shared: colors, navbar, footer -->
+  <link rel="stylesheet" href="home.css">   <!-- this page only -->
+</head>
+<body>
+
+  <!-- ================= NAVBAR (same on every page) ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- <a href="index.html" class="logo" aria-label="Sultan Mahmud - home"> -->
+        <img src="images/logo.png" alt="Logo"> 
+        <!-- <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#22d3ee"/><path d="M14 12l-6 6 6 6M22 12l6 6-6 6" stroke="#04222a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
+        <!-- <span>Sultan Mahmud<small>Bug Fix &amp; Problem Solving</small></span>
+      </a> -->
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="common-causes.html">Common Causes</a>
+        <a href="before-after.html">Before &amp; After</a>
+        <a href="packages.html">Packages</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO SLIDER =================
+         HOW TO EDIT:
+         - Each <article class="slide"> is one slide. Copy/paste one to add more (3-4 is ideal).
+         - IMAGE: change the file name inside <img src="images/slide-1.jpg">.
+           Put your picture in the "images" folder. Best size: 1600 x 700 px.
+         - If the image file is missing, the slide still shows a dark box with a label.
+         - TEXT: edit the <h2>, <p> and button text below. -->
+    <section class="hero container" aria-label="Featured services">
+      <div class="slider" id="slider" tabindex="0" role="region" aria-roledescription="carousel">
+
+        <div class="track" id="track">
+
+          <!-- Slide 1 -->
+          <article class="slide">
+            <div class="img-slot slide-bg" data-label="images/slide-1.jpg">
+              <img src="images/slide-1.jpg" alt="WordPress critical error being fixed">
+            </div>
+            <div class="slide-shade"></div>
+            <div class="slide-content">
+              <span class="tag tag-bad">Critical Error / White Screen</span>
+              <h2>Site down? Back online <em>fast and safe.</em></h2>
+              <p>I back up first, read the error log, find the exact line that broke your WordPress site and fix it without touching anything else.</p>
+              <div class="slide-btns">
+                <a href="contact.html" class="btn btn-primary">Get Your Bug Fixed</a>
+                <a href="before-after.html" class="btn btn-ghost">View Before &amp; After</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="slide">
+            <div class="img-slot slide-bg" data-label="images/slide-2.jpg">
+              <img src="images/slide-2.jpg" alt="Responsive layout fix on mobile and desktop">
+            </div>
+            <div class="slide-shade"></div>
+            <div class="slide-content">
+              <span class="tag tag-brand">CSS &amp; Layout</span>
+              <h2>Broken layout on mobile? <em>Pixel-clean everywhere.</em></h2>
+              <p>Overlapping headers, sideways scrolling and theme vs. builder clashes, repaired with small, scoped CSS and tested on real screen sizes.</p>
+              <div class="slide-btns">
+                <a href="common-causes.html" class="btn btn-primary">See Common Causes</a>
+                <a href="contact.html" class="btn btn-ghost">Fix My Layout</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="slide">
+            <div class="img-slot slide-bg" data-label="images/slide-3.jpg">
+              <img src="images/slide-3.jpg" alt="Custom PHP code and WooCommerce checkout fix">
+            </div>
+            <div class="slide-shade"></div>
+            <div class="slide-content">
+              <span class="tag tag-good">Custom PHP &amp; WooCommerce</span>
+              <h2>Plugin conflict or checkout bug? <em>Clean code that works.</em></h2>
+              <p>Custom PHP logic, plugin conflict isolation and form or checkout fixes, written to run with zero warnings.</p>
+              <div class="slide-btns">
+                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                <a href="contact.html" class="btn btn-ghost">Ask a Question</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 4 (delete this whole <article> if you only want 3 slides) -->
+          <article class="slide">
+            <div class="img-slot slide-bg" data-label="images/slide-4.jpg">
+              <img src="images/slide-4.jpg" alt="Backup first safe workflow">
+            </div>
+            <div class="slide-shade"></div>
+            <div class="slide-content">
+              <span class="tag tag-brand">Backup-First Workflow</span>
+              <h2>Safe diagnosis. <em>Clear updates.</em> No surprises.</h2>
+              <p>Every job starts with a backup and ends with testing on desktop, mobile and major browsers, plus a plain-English summary of what changed.</p>
+              <div class="slide-btns">
+                <a href="faq.html" class="btn btn-primary">Read the FAQ</a>
+                <a href="contact.html" class="btn btn-ghost">Contact Me</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /track -->
+
+        <!-- Controls: prev / next / pause-play. Dots are created by home.js -->
+        <button class="s-arrow s-prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+        <button class="s-arrow s-next" id="nextBtn" aria-label="Next slide">&#10095;</button>
+        <div class="s-bar">
+          <div class="dots" id="dots" role="tablist" aria-label="Choose slide"></div>
+          <button class="s-pause" id="pauseBtn" aria-label="Pause slideshow">&#10074;&#10074;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TRUST STRIP ================= -->
+    <section class="container">
+      <ul class="trust">
+        <li><span class="t-ico">&#9889;</span><div><strong>Fast Turnaround</strong><small>Hours, not weeks</small></div></li>
+        <li><span class="t-ico">&#128190;</span><div><strong>Backup Before Edit</strong><small>Your site stays safe</small></div></li>
+        <li><span class="t-ico">&#129529;</span><div><strong>Clean, Safe Code</strong><small>Update-proof fixes</small></div></li>
+        <li><span class="t-ico">&#128241;</span><div><strong>Mobile &amp; Browser Checked</strong><small>Every screen size</small></div></li>
+      </ul>
+    </section>
+
+    <!-- ================= WHAT I FIX (quick links) ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="head reveal">
+          <span class="eyebrow">What I fix</span>
+          <h2>Quick troubleshooting for WordPress, PHP, CSS &amp; custom code</h2>
+        </div>
+        <div class="grid3">
+          <a href="common-causes.html" class="card link-card reveal">
+            <h3><span class="dot bad"></span>Critical errors &amp; PHP fatals</h3>
+            <p>White screens, parse errors, memory limits and server problems, traced to the exact line.</p>
+            <span class="more">See common causes &rarr;</span>
+          </a>
+          <a href="before-after.html" class="card link-card reveal">
+            <h3><span class="dot good"></span>Layout &amp; checkout bugs</h3>
+            <p>Overlapping sections, mobile overflow and broken forms, shown as real before and after cases.</p>
+            <span class="more">View before &amp; after &rarr;</span>
+          </a>
+          <a href="packages.html" class="card link-card reveal">
+            <h3><span class="dot brand"></span>Clear service packages</h3>
+            <p>Pick a quick fix, a standard bug and layout fix, or a deep custom PHP debug.</p>
+            <span class="more">Compare packages &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA BAND ================= -->
+    <section class="container cta-wrap">
+      <div class="cta reveal">
+        <div>
+          <h2>Your website is broken right now?</h2>
+          <p>Send me the error message and your site link. I will reply with a clear plan.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-lg">Fix My Website Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="foot-name"> <img src="images/logo.png" alt="Logo"> </strong>
+
+        <p>Web Designer &amp; Web Developer. WordPress, PHP, CSS and custom code bug fixing.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Email</a>
+        <a href="#" target="_blank" rel="noopener">WhatsApp </a>
+        <a href="#" target="_blank" rel="noopener">GitHub </a>
+        <a href="#/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <button class="btn btn-primary btn-lg"><a style="font-size: 26px;" href="https://short-url.cc/1BeY3
+      " target="_blank" rel="noopener">👉🏽 Hire Me Via Fiverr</a></button>
+      </div>
+    <div class="container footer-bottom">&copy; <span id="year">2026</span> Sultan Mahmud. All rights reserved.</div>
+  </footer>
+
+  <script src="base.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

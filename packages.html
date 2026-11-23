@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Packages | Sultan Mahmud</title>
+  <meta name="description" content="Choose a bug fix package: Quick Fix, Standard Bug &amp; Layout Fix, or Custom PHP &amp; Deep Debug.">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="packages.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR (same on every page) ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- <a href="index.html" class="logo" aria-label="Sultan Mahmud - home"> -->
+        <img src="images/logo.png" alt="Logo"> 
+        <!-- <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#22d3ee"/><path d="M14 12l-6 6 6 6M22 12l6 6-6 6" stroke="#04222a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
+        <!-- <span>Sultan Mahmud<small>Bug Fix &amp; Problem Solving</small></span>
+      </a> -->
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="common-causes.html">Common Causes</a>
+        <a href="before-after.html">Before &amp; After</a>
+        <a href="packages.html">Packages</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div style="background-image: url(images/pakaging.jpg); background-size:cover; background-position:center; background-repeat: no-repeat;" class="container">
+        <span class="eyebrow">Service packages</span>
+        <h1>Pick the fix that matches your problem</h1>
+        <p>Not sure which one you need? Choose the closest and I will confirm the scope with you before I start.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- PACKAGE CARDS
+             HOW TO EDIT:
+             - Change the name, short text and list items freely.
+             - PRICE: replace the "Get a quote" text inside <span class="price"> with your price, e.g. $25.
+             - The button sends visitors to contact.html and pre-selects the package
+               (it uses the data-package text). Keep data-package short and without special symbols.
+             - The middle card has class "featured" = highlighted "Most Popular" card. -->
+        <div class="pack-grid">
+
+          <article class="card pack reveal">
+            <h2>Quick Fix</h2>
+            <p class="for">One clear, isolated problem.</p>
+            <div class="price-row"><span class="price">Get a quote</span></div>
+            <ul class="inc">
+              <li>1 bug or 1 CSS / layout issue</li>
+              <li>Backup before any edit</li>
+              <li>Desktop &amp; mobile check</li>
+              <li>Short written fix summary</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost btn-block pick" data-package="Quick Fix">Choose Quick Fix</a>
+          </article>
+
+          <article class="card pack featured reveal">
+            <span class="popular">Most Popular</span>
+            <h2>Standard Bug &amp; Layout Fix</h2>
+            <p class="for">Critical errors and broken layouts.</p>
+            <div class="price-row"><span class="price">Get a quote</span></div>
+            <ul class="inc">
+              <li>PHP fatal error / white screen debugging</li>
+              <li>Responsive layout &amp; CSS repair</li>
+              <li>Plugin / theme conflict isolation</li>
+              <li>Cross-browser &amp; mobile testing</li>
+              <li>Clear change report</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary btn-block pick" data-package="Standard Bug and Layout Fix">Choose Standard Fix</a>
+          </article>
+
+          <article class="card pack reveal">
+            <h2>Custom PHP &amp; Deep Debug</h2>
+            <p class="for">Custom features and several issues at once.</p>
+            <div class="price-row"><span class="price">Get a quote</span></div>
+            <ul class="inc">
+              <li>Custom PHP snippet / functionality</li>
+              <li>WooCommerce &amp; form bug fixes</li>
+              <li>Multiple issues in one job</li>
+              <li>Warning-free, documented code</li>
+              <li>Post-delivery support window</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost btn-block pick" data-package="Custom PHP and Deep Debug">Choose Deep Debug</a>
+          </article>
+
+        </div>
+
+        <p class="note">Every package starts with a backup and ends with testing. Final scope and price are confirmed with you before work begins.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="foot-name"> <img src="images/logo.png" alt="Logo"> </strong>
+        <p>Web Designer &amp; Web Developer. WordPress, PHP, CSS and custom code bug fixing.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Email</a>
+        <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        
+      </div>
+      <div><button class="btn btn-primary btn-lg"><a style="font-size: 26px;" href="https://short-url.cc/1BeY3
+" target="_blank" rel="noopener">👉🏽 Hire Me Via Fiverr</a></button></div>
+    </div>
+    <div class="container footer-bottom">&copy; <span id="year">2026</span> Sultan Mahmud. All rights reserved.</div>
+  </footer>
+
+  <script src="base.js"></script>
+  <script src="before-after.js"></script>
+</body>
+</html>

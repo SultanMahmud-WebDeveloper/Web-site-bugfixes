@@ -1,0 +1,103 @@
+/* =========================================================
+   home.css  —  styles for index.html only
+   (colors and navbar come from base.css)
+   ========================================================= */
+
+/* ---------- Hero slider ---------- */
+.hero { padding-top: 36px;}
+.slider { position: relative; overflow: hidden; border-radius: 22px;
+ border: 1px solid var(--line-strong);
+
+  box-shadow: var(--shadow), 0 0 60px -30px rgba(34,211,238,.45);
+   outline: none;
+
+    }
+
+/* The track holds all slides side by side. home.js moves it with translateX.
+   SLIDE SPEED: change 1.6s below (bigger number = slower slide). */
+.track { display: flex; transition: transform 1.6s cubic-bezier(.45, .05, .25, 1); }
+.track.no-anim { transition: none; }
+
+/* SLIDE BOX SIZE: change min-height to make slides taller or shorter */
+.slide { position: relative; flex: 0 0 100%; min-height: 520px; display: flex; align-items: center; }
+
+/* Background image fills the whole slide */
+.slide-bg { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; border: none; place-items: start end; }
+/*.slide-bg::before { z-index: 3; margin: 14px 16px; } */  /* keeps the "Add image" label in the corner, away from the text */
+/* Dark gradient so white text stays readable on ANY image */
+.slide-shade { position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(7,13,18,.94) 0%, rgba(7,13,18,.72) 45%, rgba(7,13,18,.25) 100%); }
+.slide-content { position: relative; z-index: 2; padding: 40px clamp(24px, 6vw, 70px); max-width: 680px; }
+.slide-content h2 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); font-weight: 800; margin-bottom: 16px; }
+.slide-content h2 em { font-style: normal; color: var(--brand); }
+.slide-content p { font-size: 1.05rem; max-width: 56ch; margin-bottom: 26px; }
+.slide-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.tag { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: .74rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 18px; border: 1px solid; }
+.tag-bad   { color: var(--bad);   background: var(--bad-soft);   border-color: rgba(255,90,110,.45); }
+.tag-good  { color: var(--good);  background: var(--good-soft);  border-color: rgba(16,185,129,.45); }
+.tag-brand { color: var(--brand); background: var(--brand-soft); border-color: rgba(34,211,238,.45); }
+
+/* Prev / Next arrows */
+.s-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 46px; height: 46px;
+  border-radius: 50%; cursor: pointer; color: var(--white); background: rgba(7,13,18,.6);
+  border: 1.5px solid var(--line-strong); font-size: .95rem; transition: all .2s; backdrop-filter: blur(6px); }
+.s-arrow:hover { background: var(--brand); color: #04222a; border-color: var(--brand); }
+.s-prev { left: 16px; } .s-next { right: 16px; }
+
+/* Dots + pause button */
+.s-bar { position: absolute; z-index: 5; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; align-items: center; gap: 16px; }
+.dots { display: flex; gap: 10px; }
+.dot-btn { width: 11px; height: 11px; padding: 0; border: none; border-radius: 999px; cursor: pointer;
+  background: rgba(255,255,255,.35); transition: width .3s, background .3s; }
+.dot-btn:hover { background: rgba(255,255,255,.7); }
+.dot-btn.active { width: 34px; background: var(--brand); }
+.s-pause { width: 34px; height: 34px; border-radius: 50%; cursor: pointer; color: var(--white); font-size: .6rem;
+  background: rgba(7,13,18,.6); border: 1.5px solid var(--line-strong); transition: all .2s; }
+.s-pause:hover { background: var(--brand); color: #04222a; border-color: var(--brand); }
+
+/* ---------- Trust strip ---------- */
+.trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 26px; padding: 18px;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.trust li { display: flex; align-items: center; gap: 12px; }
+.t-ico { flex: none; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px;
+  background: var(--brand-soft); border: 1px solid rgba(34,211,238,.3); font-size: 1.1rem; }
+.trust strong { display: block; color: var(--white); font-size: .93rem; line-height: 1.3; }
+.trust small { color: var(--mute); font-size: .8rem; }
+
+/* ---------- Quick link cards ---------- */
+.head { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+.head h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 800; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.link-card { display: block; }
+.link-card h3 { font-size: 1.15rem; display: flex; align-items: center; gap: 10px; }
+.link-card p { color: var(--text); }
+.more { color: var(--brand); font-weight: 700; font-size: .92rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot.bad { background: var(--bad); box-shadow: 0 0 10px var(--bad); }
+.dot.good { background: var(--good); box-shadow: 0 0 10px var(--good); }
+.dot.brand { background: var(--brand); box-shadow: 0 0 10px var(--brand); }
+
+/* ---------- CTA band ---------- */
+.cta-wrap { padding-bottom: 80px; }
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  padding: 34px clamp(22px, 4vw, 44px); border-radius: 20px; border: 1px solid rgba(34,211,238,.4);
+  background: linear-gradient(120deg, rgba(34,211,238,.14), rgba(16,185,129,.08)); }
+.cta h2 { margin-bottom: 6px; font-size: clamp(1.4rem, 3vw, 2rem); }
+.cta p { margin: 0; }
+.foot-name { color: var(--white); font-size: 1.1rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .trust { grid-template-columns: repeat(2, 1fr); }
+  .grid3 { grid-template-columns: 1fr; }
+  .slide { min-height: 560px; }
+  .slide-shade { background: linear-gradient(180deg, rgba(7,13,18,.75), rgba(7,13,18,.92)); }
+}
+@media (max-width: 560px) {
+  .trust { grid-template-columns: 1fr; }
+  .s-arrow { display: none; }              /* swipe instead of arrows on phones */
+  .slide-content { padding-bottom: 70px; }
+  .slide-btns .btn { width: 100%; }
+}

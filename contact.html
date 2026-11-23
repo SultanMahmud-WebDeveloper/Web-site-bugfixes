@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Bug Inquiry | Sultan Mahmud</title>
+  <meta name="description" content="Describe your WordPress, PHP or CSS problem and get a ready-to-send summary, or contact Sultan Mahmud directly.">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR (same on every page) ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- <a href="index.html" class="logo" aria-label="Sultan Mahmud - home"> -->
+        <img src="images/logo.png" alt="Logo"> 
+        <!-- <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#22d3ee"/><path d="M14 12l-6 6 6 6M22 12l6 6-6 6" stroke="#04222a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
+        <!-- <span>Sultan Mahmud<small>Bug Fix &amp; Problem Solving</small></span>
+      </a> -->
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="common-causes.html">Common Causes</a>
+        <a href="before-after.html">Before &amp; After</a>
+        <a href="packages.html">Packages</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div style="background-color: #0D1720;" class="container">
+        <span class="eyebrow">Contact &amp; bug inquiry</span>
+        <h1>Tell me what is broken</h1>
+        <p>Fill in the form to get a clear summary you can copy, or send straight to me by email or WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+
+        <!-- ================= BUG INQUIRY FORM =================
+             The form does not reload the page. contact.js builds a summary
+             on the right with Copy / Email / WhatsApp buttons. -->
+        <div class="left-col">
+          <form class="card form" id="bugForm" novalidate>
+            <h2>Bug inquiry form</h2>
+
+            <div class="row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Alex Johnson" autocomplete="name">
+                <small class="err" id="err-name"></small>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                <small class="err" id="err-email"></small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="url">Website URL</label>
+              <input type="text" id="url" name="url" placeholder="https://yoursite.com" autocomplete="url">
+              <small class="err" id="err-url"></small>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="type">Problem type</label>
+                <select id="type" name="type">
+                  <option>PHP Error</option>
+                  <option>CSS / Layout</option>
+                  <option>Plugin Conflict</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="package">Package (optional)</label>
+                <select id="package" name="package">
+                  <option>Not sure yet</option>
+                  <option>Quick Fix</option>
+                  <option>Standard Bug and Layout Fix</option>
+                  <option>Custom PHP and Deep Debug</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Describe the problem</label>
+              <textarea id="message" name="message" rows="6" placeholder="Paste the error message or describe what you see. When did it start? Did you update anything?"></textarea>
+              <small class="err" id="err-message"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Create My Inquiry Summary</button>
+          </form>
+        </div>
+
+        <!-- ================= SUMMARY + DIRECT CONTACT ================= -->
+        <aside class="right-col">
+
+          <div class="card result" id="result" aria-live="polite">
+            <div class="result-head">
+              <h2>Your summary</h2>
+              <span class="pill" id="pill">Waiting</span>
+            </div>
+            <pre class="summary" id="summary">Fill in the form and press "Create My Inquiry Summary". Your summary will appear here.</pre>
+            <div class="result-btns">
+              <button class="btn btn-ghost btn-sm" id="copyBtn" disabled>Copy</button>
+              <a class="btn btn-primary btn-sm disabled" id="mailBtn" href="mailto:sultanmahmudasa77@gmail.com" aria-disabled="true">Send by Email</a>
+              <a class="btn btn-wa btn-sm disabled" id="waBtn" href="https://wa.me/8801722777344" target="_blank" rel="noopener" aria-disabled="true">WhatsApp</a>
+            </div>
+            <p class="copied" id="copied" role="status"></p>
+          </div>
+
+          <!-- DIRECT CONTACT CARDS -->
+          <div class="contact-cards">
+            <a class="card c-card" href="https://short-url.cc/1BeY3
+              ">
+              <span class="c-ico">&#9993;</span>
+              <div><strong>Email</strong><span>Hire Me Via Fiverr</span></div>
+            </a>
+            <a class="card c-card" href="https://short-url.cc/1BeY3
+              " target="_blank" rel="noopener">
+              <span class="c-ico">&#9742;</span>
+              <div><strong>Phone / WhatsApp</strong><span>Hire Me Via Fiverr</span></div>
+            </a>
+            <a class="card c-card" href="https://short-url.cc/1BeY3
+              " target="_blank" rel="noopener">
+              <span class="c-ico">&lt;/&gt;</span>
+              <div><strong>GitHub</strong><span>Hire Me Via Fiverr</span></div>
+            </a>
+            <a class="card c-card" href="https://short-url.cc/1BeY3
+              " target="_blank" rel="noopener">
+              <span class="c-ico">in</span>
+              <div><strong>LinkedIn</strong><span>Hire Me Via Fiverr</span></div>
+            </a>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="foot-name"> <img src="images/logo.png" alt="Logo"> </strong>
+        <p>Web Designer &amp; Web Developer. WordPress, PHP, CSS and custom code bug fixing.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Email</a>
+        <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        
+      </div>
+      <div><button class="btn btn-primary btn-lg"><a style="font-size: 26px;" href="https://short-url.cc/1BeY3
+              " target="_blank" rel="noopener">👉🏽 Hire Me Via Fiverr</a></button></div>
+    </div>
+    <div class="container footer-bottom">&copy; <span id="year">2026</span> Sultan Mahmud. All rights reserved.</div>
+  </footer>
+
+  <script src="base.js"></script>
+  <script src="before-after.js"></script>
+</body>
+</html>
